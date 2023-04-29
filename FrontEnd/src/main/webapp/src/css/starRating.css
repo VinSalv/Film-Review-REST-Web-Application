@@ -1,0 +1,110 @@
+.ratings {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    color: #888888;
+    font-size: 25px;
+    height: 25px;
+    width: auto;
+    margin: 0;
+    position: relative;
+    padding: 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+}
+
+.rating-upper {
+    color: #e1c028;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.rating-lower {
+    padding: 0;
+    display: flex;
+    z-index: 0;
+}
+
+.labelStars {
+    font-size: 15px;
+}
+
+
+.rating {
+    float: left;
+}
+
+
+.rating:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+}
+
+.rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating.clickable:not(:checked) > label:hover,
+.rating.clickable:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating.clickable > input:checked + label:hover,
+.rating.clickable > input:checked + label:hover ~ label,
+.rating.clickable > input:checked ~ label:hover,
+.rating.clickable > input:checked ~ label:hover ~ label,
+.rating.clickable > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+
+.rating.clickable > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+/*set a style for the buttons*/
+.myB {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* set a hover effect for the button*/
+.myB:hover {
+    opacity: 0.8;
+}
+
+
+.checked {
+    color: #e1c028;
+}
+

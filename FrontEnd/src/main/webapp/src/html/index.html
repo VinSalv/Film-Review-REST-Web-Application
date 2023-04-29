@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale:1.0" name="viewport">
+    <title>Login or Sing-up</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Main -->
+<div class="main">
+    <div class="card">
+        <div class="card-title">
+            <h3><i aria-hidden="true" class="fa fa-user-circle-o"></i> User <span id="action_title">Login</span>
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="card-body-top">
+                <button class="btn" id="login" name="login" onclick="login()">login</button>
+                <button class="btn" id="register" name="register" onclick="register()">register</button>
+                <div id="pointer-btn"></div>
+            </div>
+            <div class="card-body-login">
+                <form id="login-form">
+                    <input class="input-form" name="user" placeholder="Enter your email or your username" required
+                           type="text"><br><br>
+                    <input class="input-form" name="password" placeholder="Enter your password" required
+                           type="password"><br><br><br>
+                    <input class="submit-form" onclick="controller.access()" value="Login">
+                </form>
+                <form id="register-form">
+                    <input class="input-form" name="username" placeholder="Enter your username" required
+                           type="name"><br><br>
+                    <input class="input-form" name="email" placeholder="Enter your email" required
+                           type="email"><br><br>
+                    <input class="input-form" name="password" placeholder="Enter your password" required
+                           type="password"><br><br>
+                    <input class="submit-form" onclick="controller.registration()" value="Sing-up">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JQuery api -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+<script charset="utf-8" src="../js/LoginPage.js"></script>
+<script charset="utf-8" src="../js/CookieManagement.js"></script>
+<script charset="utf-8" src="../js/GatewayEndPoint.js"></script>
+<script type="application/javascript">
+    const controller = new LoginPage(ENDPOINT);
+</script>
+<script>
+    var x = document.getElementById("login-form");
+    var y = document.getElementById("register-form");
+    var z = document.getElementById("pointer-btn");
+    var l = document.getElementById("login");
+    var r = document.getElementById("register");
+    var ac = document.getElementById("action_title");
+
+    function register() {
+        x.style.left = "-450px";
+        y.style.left = "25px";
+        z.style.left = "215px";
+        l.style.color = "#848484";
+        r.style.color = "#00ffc3";
+        ac.textContent = "Register";
+    }
+
+    function login() {
+        x.style.left = "25px";
+        y.style.left = "450px";
+        z.style.left = "30px";
+        l.style.color = "#00ffc3";
+        r.style.color = "#848484";
+        ac.textContent = "Login";
+    }
+</script>
+</body>
+
+</html>
